@@ -1,0 +1,4736 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Hs01006: Language Features, Arithmetic Operators</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m37146</md:content-id>
+  <md:title>Hs01006: Language Features, Arithmetic Operators</md:title>
+  <md:abstract>This lesson explains several of the pitfalls awaiting the unsuspecting Java programming student using the arithmetic operators.</md:abstract>
+  <md:uuid>fd95bfbe-f1cd-4db5-867e-02f2a8d0d0f8</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="Supplemental_material">
+
+Supplemental material
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Integer_division">
+
+Integer division
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Arithmetic_overflow">
+
+Arithmetic overflow
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Integer_divide_by_zero">
+
+Integer divide by zero
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="Floating_divide_by_zero">
+
+Floating divide by zero
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="Mixed-type_arithmetic">
+
+Mixed-type arithmetic
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Signed_modulus_operations">
+
+Signed modulus operations
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="Modulus_with_zero_divisor">
+
+Modulus with zero divisor
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1014">
+<link id="a1014" target-id="Modulus_operator_with_floating_types">
+
+Modulus operator 
+		with floating types
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1015">
+<link id="a1015" target-id="A_totally_incorrect_modulus_result">
+
+A totally incorrect 
+		modulus result
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Not_a_Number">
+
+Not a Number
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This tutorial lesson is part of a series of lessons dedicated to the
+
+
+<link id="a1019" url="http://apcentral.collegeboard.com/apc/public/courses/teachers_corner/4483.html">
+
+
+AP Computer Science A Exam
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1001">
+The purpose of the series is to help you to better understand some of the 
+material that you will find on the website that provides information for the 
+exam.
+
+</para>
+
+
+
+
+
+
+
+
+
+<para id="p1002">
+For example, if you access the
+
+
+<link id="a1020" url="http://apcentral.collegeboard.com/apc/public/repository/ap-computer-science-course-description.pdf">
+
+
+AP Computer Science Course Description
+
+</link>
+
+ and scroll down to Appendix A titled 
+
+
+<emphasis id="em1000" effect="italics">
+AP Computer Science Java Subset
+
+</emphasis>
+, you will find the following
+
+
+<emphasis id="specification" effect="bold">
+
+specification
+
+</emphasis>
+
+:
+
+</para>
+
+
+	
+
+
+<note id="note1000" type="">
+
+
+
+
+
+2. Arithmetic operators: +, -, *, /, % are part of the AP Java subset.
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1003">
+<emphasis id="em1001" effect="italics">
+(Note: This is the wording that appeared on the website on March 1, 
+	2011. It may change over time.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1000" effect="bold">
+May be clear to some, but not to others
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1005">
+While some students and their homeschool parents may know exactly what is 
+	meant by this text, others may not. Therefore, my objective will be to 
+	elaborate on and attempt to clarify such specifications from a technical viewpoint to help those 
+	students and their parents get a better understanding of where they need to 
+	concentrate their efforts.
+
+</para>
+
+
+
+
+<para id="p1006">
+In this lesson, I will provide program code that illustrates some of what the 
+student is expected to know about the arithmetic operators.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the figures 
+and listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+	
+
+<item id="li1019">
+<link id="a1021" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Arithmetic Operators.
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1022" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Runtime error.
+
+</item>
+
+
+	
+
+<item id="li1021">
+<link id="a1023" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Runtime error.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1022">
+<link id="a1024" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Integer division. 
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1025" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Arithmetic overflow.
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1026" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Integer divide by zero.
+
+</item>
+
+
+	
+
+<item id="li1025">
+<link id="a1027" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Floating divide by zero. 
+
+</item>
+
+
+	
+
+<item id="li1026">
+<link id="a1028" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Mixed-type arithmetic. 
+
+</item>
+
+
+	
+
+<item id="li1027">
+<link id="a1029" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Signed modulus operations.
+
+</item>
+
+
+	
+
+<item id="li1028">
+<link id="a1030" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Modulus with zero divisor. 
+
+</item>
+
+
+	
+
+<item id="li1029">
+<link id="a1031" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Modulus operator with floating 
+	types. 
+
+</item>
+
+
+	
+
+<item id="li1030">
+<link id="a1032" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. A totally incorrect modulus result. 
+
+</item>
+
+
+	
+
+<item id="li1031">
+<link id="a1033" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Not a number (NaN). 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+ 
+
+<emphasis id="Supplemental_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1008">
+ I recommend that you also study the other lessons in my extensive collection 
+of online programming tutorials. You will find a consolidated index at
+
+
+<link id="a1034" url="http://www.dickbaldwin.com/toc.htm">
+
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1009">
+According to Sun's
+
+
+<link id="a1035" url="http://download.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html">
+
+
+Summary of Operators website
+
+</link>
+
+, the Java arithmetic operators are shown in 
+Figure 1.
+
+</para>
+
+
+
+	
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+	
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Arithmetic Operators.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+	
+
+<para id="p1010">
++ 	Additive operator (also used for String concatenation)
+
+
+</para>
+
+
+						
+
+<para id="p1011">
+- 	Subtraction operator
+
+
+</para>
+
+
+						
+
+<para id="p1012">
+*	Multiplication operator
+
+
+</para>
+
+
+						
+
+<para id="p1013">
+/ 	Division operator
+
+
+</para>
+
+
+						
+
+<para id="p1014">
+%	Remainder operator 
+
+</para>
+
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+	
+	
+
+<para id="p1015">
+<emphasis id="strong1001" effect="bold">
+Five arithmetic operators
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1016">
+If you compare Figure 1 with the 
+
+<link id="a1036" target-id="specification">
+
+specification
+
+</link>
+
+, 
+	you will see that all of the arithmetic operators are included in the Java 
+	subset. Unlike the case for primitive variables discussed in an earlier 
+	lesson, none of the arithmetic operators are excluded from the subset. 
+	Therefore, the student is expected to understand how to use all of the 
+	arithmetic operators in order to successfully complete the exam.
+
+</para>
+
+
+
+
+<para id="p1017">
+As indicated in 
+
+<link id="a1037" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the + operator is also used for string 
+concatenation, but that is another topic for another lesson.
+
+</para>
+
+
+
+
+<para id="p1018">
+<emphasis id="strong1002" effect="bold">
+Are the operators as innocuous as they seem?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1019">
+At first glance, you might ask why there is a need to elaborate on or to 
+clarify this 
+specification. After all, aren't the arithmetic operators completely innocuous? 
+The fact is that the arithmetic operators may not be as innocuous as they seem. 
+There are several pitfalls involving these operators that can trap the unsuspecting Java programming student.
+
+</para>
+
+
+
+
+<para id="p1020">
+<emphasis id="strong1003" effect="bold">
+The subtraction operator is rather innocuous
+
+</emphasis>
+</para>
+
+
+	
+
+
+<para id="p1021">
+There is very little to say about the - operator. It performs numeric 
+subtraction as indicated in Figure 1. It is hard to get into trouble doing 
+numeric subtraction.
+
+</para>
+
+
+
+
+<para id="p1022">
+<emphasis id="strong1004" effect="bold">
+The other operators are not so innocuous
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1023">
+However, the addition, multiplication, division and remainder operators probably do deserve a little more scrutiny, particularly insofar as to 
+how they behave for different types. 
+
+<emphasis id="em1002" effect="italics">
+(Note that the remainder operator is also known 
+as the modulus operator.)
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="Integer_division" effect="bold">
+
+Integer division
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1024">
+Let's begin with a question. Which of the following outputs, if any, is produced by the program shown in 
+
+
+<link id="a1038" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1032">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1033">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1034">
+C. 33.666666
+
+</item>
+
+
+	
+
+<item id="li1035">
+D. 34
+
+</item>
+
+
+	
+
+<item id="li1036">
+E. 33
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+
+
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Integer division.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1000" display="block">public class Division01{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    int myVar01 = 101;
+    int myVar02 = 3;
+    System.out.println(myVar01/myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1025">
+<emphasis id="strong1005" effect="bold">
+The first program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1026">
+Since this the first program code that I have presented in this series of 
+lessons, I will explain some aspects of the code before providing and explaining 
+the answer to the question.
+
+</para>
+
+
+
+
+<para id="p1027">
+<emphasis id="strong1006" effect="bold">
+A violation of specification number 18
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1028">
+To begin with, this program, 
+
+<emphasis id="em1003" effect="italics">
+(and many of the other programs that I will present 
+in this series of lessons)
+
+</emphasis>
+, violates specification number 18 in the 
+
+
+<link id="a1039" url="http://apcentral.collegeboard.com/apc/public/repository/ap-computer-science-course-description.pdf">
+
+course description
+
+</link>
+
+. 
+That specification reads partially 
+as follows:
+
+</para>
+
+
+
+
+<para id="p1029">
+<emphasis id="em1004" effect="italics">
+"18. Visibility: In the AP Java subset, all classes are public."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1007" effect="bold">
+Overkill
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+While that probably is a worthwhile requirement in large-scale project 
+development, it is overkill for the simple programs that I will present in this 
+series of lessons. 
+
+<emphasis id="em1005" effect="italics">
+(Note that the class named 
+
+</emphasis>
+ 
+
+<emphasis id="strong1008" effect="bold">
+<emphasis id="em1006" effect="italics">
+Worker
+
+</emphasis>
+</emphasis>
+<emphasis id="em1007" effect="italics">
+ in 
+
+
+<link id="a1040" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ is not declared 
+
+</emphasis>
+ 
+
+<emphasis id="strong1009" effect="bold">
+<emphasis id="em1008" effect="italics">
+public
+
+</emphasis>
+</emphasis>
+<emphasis id="em1009" effect="italics">
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1032">
+If I were to declare the 
+
+<emphasis id="strong1010" effect="bold">
+Worker
+
+</emphasis>
+ class 
+
+
+<emphasis id="strong1011" effect="bold">
+public
+
+</emphasis>
+, it would be necessary for me to put it in a separate disk file named 
+
+
+<emphasis id="strong1012" effect="bold">
+Worker.java
+
+</emphasis>
+. That would complicate my disk management efforts with regard to 
+this series of lessons, and would also complicate your efforts in those cases where 
+you want to copy, compile, experiment with, and execute the code.
+
+</para>
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1013" effect="bold">
+All class definitions in the same disk file
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1034">
+Therefore, in 
+most cases, I will omit the 
+
+<emphasis id="strong1014" effect="bold">
+public
+
+</emphasis>
+ declaration for all classes 
+other than the driver class that contains the 
+
+<emphasis id="strong1015" effect="bold">
+main
+
+</emphasis>
+ method. That 
+will allow me to put 
+all classes belonging to a single program in a single disk file, and to provide a 
+listing of the program in a form that you can easily copy into your IDE.
+
+</para>
+
+
+
+
+<para id="p1035">
+Having copied the program into your Java IDE, 
+you can save the source code in a single disk file. Having done that, you can compile and 
+execute the program without having to create a separate disk file for each 
+class definition in the program.
+
+</para>
+
+
+
+
+<para id="p1036">
+<emphasis id="strong1016" effect="bold">
+Program organization
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+As you can see from 
+
+<link id="a1041" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+, this program contains two class definitions:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1037">
+<emphasis id="strong1017" effect="bold">
+Division01
+
+</emphasis>
+, which is declared 
+
+<emphasis id="strong1018" effect="bold">
+public
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1038">
+<emphasis id="strong1019" effect="bold">
+Worker
+
+</emphasis>
+, which is not declared 
+
+<emphasis id="strong1020" effect="bold">
+public
+
+</emphasis>
+.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1038">
+As explained above, all of the source code is contained in a single disk file named 
+
+<emphasis id="strong1021" effect="bold">
+
+Division01.java
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1039">
+The class named 
+
+<emphasis id="strong1022" effect="bold">
+Division01
+
+</emphasis>
+ is what I will frequently refer 
+to as the 
+
+<emphasis id="em1010" effect="italics">
+driver
+
+</emphasis>
+ class. In particular, it contains the 
+
+<emphasis id="strong1023" effect="bold">
+main
+
+</emphasis>
+ 
+method, where execution begins and ends in a Java application.
+
+</para>
+
+
+
+
+<para id="p1040">
+<emphasis id="strong1024" effect="bold">
+A simple main method
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1041">
+In accordance with specification 13 of the 
+
+
+<link id="a1042" url="http://apcentral.collegeboard.com/apc/public/repository/ap-computer-science-course-description.pdf">
+
+course description
+
+</link>
+
+, 
+the 
+
+<emphasis id="strong1025" effect="bold">
+main
+
+</emphasis>
+ method is very simple. In particular, the 
+
+<emphasis id="strong1026" effect="bold">
+main
+
+</emphasis>
+ 
+method instantiates a new object of the class named 
+
+<emphasis id="strong1027" effect="bold">
+Worker
+
+</emphasis>
+, and 
+calls a method named 
+
+<emphasis id="strong1028" effect="bold">
+doWork
+
+</emphasis>
+ belonging to that object. All of 
+the work in the program is performed by the method named 
+
+<emphasis id="strong1029" effect="bold">
+doWork
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="strong1030" effect="bold">
+Back to the question...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+Now let's get back to the question that was posed 
+
+<link id="a1043" target-id="Integer_division">
+
+
+earlier
+
+</link>
+
+. Which of the outputs listed above are produced by the program code 
+in 
+
+<link id="a1044" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<para id="p1044">
+<emphasis id="strong1031" effect="bold">
+Explanation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1045">
+This program illustrates the integer truncation that results when the division operator is applied to operands of the integer types.
+
+</para>
+
+
+
+
+<para id="p1046">
+<emphasis id="strong1032" effect="bold">
+The result of simple long division
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1047">
+We all know that when we divide 101 by 3, the result is 33.666666 with the sixes extending out to the limit of our arithmetic accuracy.
+
+
+<emphasis id="em1011" effect="italics">
+(Confirm it using your hand calculator.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1048">
+<emphasis id="strong1033" effect="bold">
+The result of rounding
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1049">
+If we round the quotient to the next closest integer, the result is 34.
+
+</para>
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1034" effect="bold">
+Integer division does not round
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1051">
+However, when division is performed using operands of integer types in Java, the fractional part is simply discarded 
+
+
+<emphasis id="em1012" effect="italics">
+(not rounded)
+
+</emphasis>
+.
+
+The result is the whole number result without regard for the fractional part or the remainder.
+
+Thus, with integer division, 101/3 produces the integer value 33.
+
+</para>
+
+
+
+
+<para id="p1052">
+<emphasis id="strong1035" effect="bold">
+If either operand is a floating type...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1053">
+If either operand is one of the floating types,
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1039">
+the integer operand will be converted to the floating type,
+
+</item>
+
+
+	
+
+<item id="li1040">
+the quotient will be of the floating type, and
+
+</item>
+
+
+	
+
+<item id="li1041">
+the fractional part of the quotient will be preserved to some degree of accuracy
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1054">
+<emphasis id="strong1036" effect="bold">
+And the answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+The code in 
+
+<link id="a1045" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ displays 33 on the standard output device 
+
+<emphasis id="em1013" effect="italics">
+
+(typically the command-line screen)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Arithmetic_overflow" effect="bold">
+
+Arithmetic overflow
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1056">
+Let's continue with another question. What output is produced by the program 
+shown in 
+
+<link id="a1046" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+? 
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1042">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1043">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1044">
+C. 2147483649
+
+</item>
+
+
+	
+
+<item id="li1045">
+D. -2147483647
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+
+
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Arithmetic overflow.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1001" display="block">public class Overflow01{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    //Integer.MAX_VALUE = 2147483647
+    int myVar01 = Integer.MAX_VALUE;
+    int myVar02 = 2;
+    System.out.println(myVar01 + myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1057">
+<emphasis id="strong1037" effect="bold">
+Explanation
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1058">
+This program illustrates a dangerous situation involving arithmetic using operands of integer types.  This situation involves a condition commonly known as 
+
+
+<emphasis id="em1014" effect="italics">
+integer overflow
+
+</emphasis>
+ or 
+
+<emphasis id="em1015" effect="italics">
+arithmetic overflow
+
+</emphasis>
+. This problem usually 
+involves either the addition or multiplication of integer operands.
+
+</para>
+
+
+
+
+<para id="p1059">
+<emphasis id="strong1038" effect="bold">
+The good news
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1060">
+The good news about doing arithmetic using operands of integer types is that as long as the result is within the allowable value range for the wider of the integer types, the results are exact 
+
+
+<emphasis id="em1016" effect="italics">
+(floating arithmetic often produces results that are not exact)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1061">
+<emphasis id="strong1039" effect="bold">
+The bad news
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1062">
+The bad news about doing arithmetic using operands of integer types is that when the result is not within the allowable value range for the wider of the integer types, the results are garbage, having no usable relationship to the correct result.
+
+
+<emphasis id="em1017" effect="italics">
+(Floating arithmetic has a much higher probability of producing approximately correct results, even though the results may not be exact.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1063">
+<emphasis id="strong1040" effect="bold">
+For this specific case...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1064">
+As you will see by the answer to this question given below, when a value of 2 
+
+<emphasis id="em1018" effect="italics">
+(see
+
+
+<link id="a1047" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+)
+
+</emphasis>
+ was added to the largest positive value that can be stored in type
+
+
+<emphasis id="strong1041" effect="bold">
+int
+
+</emphasis>
+, the incorrect result was a very large negative value.
+
+</para>
+
+
+
+
+<para id="p1065">
+This result is simply not correct.  
+
+<emphasis id="em1019" effect="italics">
+(If you know how to do binary arithmetic, you can figure out how this happens, but that is 
+a topic for another lesson on another day.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1042" effect="bold">
+No safety net in this case -- just garbage
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+Furthermore, there was no compiler error and no runtime error.  The program simply produced an incorrect result with no warning.
+
+</para>
+
+
+
+
+<para id="p1068">
+You need to be especially careful when writing programs that perform arithmetic using operands of integer types.  Otherwise, your programs may produce incorrect results 
+without you even knowing that it is happening. 
+
+</para>
+
+
+
+
+<para id="p1069">
+<emphasis id="strong1043" effect="bold">
+And the correct answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1070">
+D. -2147483647
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Integer_divide_by_zero" effect="bold">
+
+Integer divide by zero
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1071">
+What output is produced by the program in 
+
+<link id="a1048" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1046">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1047">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1048">
+C. Infinity
+
+</item>
+
+
+	
+
+<item id="li1049">
+D. 11
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1003">
+<row id="tr1006">
+<entry id="th1003">
+
+	
+
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Integer divide by zero.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1002" display="block">public class Division03{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    int myVar01 = 11;
+    int myVar02 = 0;
+    System.out.println(myVar01/myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1072">
+<emphasis id="strong1044" effect="bold">
+Dividing by zero
+
+</emphasis>
+
+
+
+
+</para>
+
+
+
+
+<para id="p1073">
+This program attempts to divide the 
+
+<emphasis id="strong1045" effect="bold">
+int
+
+</emphasis>
+ value of 11 by the 
+
+
+<emphasis id="strong1046" effect="bold">
+int
+
+</emphasis>
+ value of zero.
+
+
+
+</para>
+
+
+
+
+<para id="p1074">
+<emphasis id="strong1047" effect="bold">
+Integer division by zero is not allowed
+
+</emphasis>
+
+
+
+
+</para>
+
+
+
+
+<para id="p1075">
+This code produces the runtime error shown in 
+
+<link id="a1049" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, 
+which terminates the program.
+
+</para>
+
+
+
+
+<para id="p1076">
+<emphasis id="strong1048" effect="bold">
+Two ways to deal with this kind of problem
+
+</emphasis>
+
+
+
+
+</para>
+
+
+
+
+<para id="p1077">
+One way is to test the right operand before each divide operation to ensure that it isn't equal to zero, and to take appropriate action if it is.
+
+</para>
+
+
+
+
+<para id="p1078">
+A second 
+
+<emphasis id="em1020" effect="italics">
+(probably preferred)
+
+</emphasis>
+ way is to use exception handling and 
+to surround the divide operation with a 
+
+
+<emphasis id="strong1049" effect="bold">
+try
+
+</emphasis>
+ block, followed by a 
+
+<emphasis id="strong1050" effect="bold">
+catch
+
+</emphasis>
+ block for the type 
+
+
+<emphasis id="strong1051" effect="bold">
+java.lang.ArithmeticException
+
+</emphasis>
+.
+
+The code in the catch block can be designed to deal with the problem if it occurs.  
+
+
+<emphasis id="em1021" effect="italics">
+(Exception handling will be discussed in a future lesson.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1079">
+<emphasis id="strong1052" effect="bold">
+And the answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1080">
+The code in 
+
+<link id="a1050" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ produces the runtime error 
+shown in 
+
+<link id="a1051" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1004">
+<row id="tr1008">
+<entry id="th1004">
+
+	
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2.
+
+</emphasis>
+
+ Runtime error.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+
+<code id="pre1003" display="block">Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at Worker.doWork(Division03.java:13)
+        at Division03.main(Division03.java:5)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+	
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Floating_divide_by_zero" effect="bold">
+
+Floating divide by zero
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1081">
+What output is produced by the program shown in 
+
+<link id="a1052" target-id="Listing_4">
+
+Listing 
+4
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1050">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1051">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1052">
+C. -Infinity
+
+</item>
+
+
+	
+
+<item id="li1053">
+D. 11
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1005">
+<row id="tr1010">
+<entry id="th1005">
+
+	
+
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Floating divide by zero.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1004" display="block">public class Division02{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    double myVar01 = -11;
+    double myVar02 = 0;
+    System.out.println(myVar01/myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1082">
+<emphasis id="strong1053" effect="bold">
+Floating divide by zero
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1083">
+The program in 
+
+<link id="a1053" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ attempts to divide the double value of 
+-11 by the double value of zero.
+
+</para>
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1054" effect="bold">
+No runtime error with floating divide by zero
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+In the case of floating types, an attempt to divide by zero does not produce a runtime error.  Rather, it returns a value that the 
+
+
+<emphasis id="strong1055" effect="bold">
+println
+
+</emphasis>
+ method interprets and displays as either 
+
+<emphasis id="em1022" effect="italics">
+Infinity
+
+</emphasis>
+ 
+or 
+
+<emphasis id="em1023" effect="italics">
+-Infinity
+
+</emphasis>
+.
+
+
+
+</para>
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1056" effect="bold">
+What is the actual value?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1087">
+The actual value returned by the division operation in this program is the 
+value of a static final variable in the 
+
+<emphasis id="strong1057" effect="bold">
+Double
+
+</emphasis>
+ class named 
+
+<emphasis id="strong1058" effect="bold">
+<emphasis id="NEGATIVE_INFINITY" effect="bold">
+
+NEGATIVE_INFINITY
+
+</emphasis>
+
+
+</emphasis>
+.
+
+
+
+<emphasis id="em1024" effect="italics">
+(There is also a value for 
+
+<emphasis id="strong1059" effect="bold">
+POSITIVE_INFINITY
+
+</emphasis>
+.) 
+
+</emphasis>
+
+
+
+
+</para>
+
+
+
+
+<para id="p1088">
+<emphasis id="strong1060" effect="bold">
+Is this a better approach?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1089">
+As you learned earlier, if you attempt to divide by zero with integer 
+arithmetic, an exception will be thrown. Is this a better approach than throwing an exception?
+
+I will let you be the judge of that.
+
+The important thing is that you know what will happen in both cases and be 
+prepared to deal with the consequences.
+
+</para>
+
+
+
+
+<para id="p1090">
+In either case, you could test the right operand before the divide to ensure 
+that it isn't equal to zero, and then take appropriate action if it is zero.
+
+</para>
+
+
+
+
+<para id="p1091">
+<emphasis id="strong1061" effect="bold">
+Cannot use exception handling in this case
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1092">
+For floating divide by zero, you cannot handle the problem by using 
+
+<emphasis id="em1025" effect="italics">
+try-catch
+
+</emphasis>
+ 
+because an error or exception won't be thrown.
+
+However, you can test the result following the divide to see if it is equal to either of the infinity values mentioned 
+
+
+<link id="a1054" target-id="NEGATIVE_INFINITY">
+
+above
+
+</link>
+
+. Note, however, that you will need to 
+test against the constant values shown 
+
+<link id="a1055" target-id="NEGATIVE_INFINITY">
+
+above
+
+</link>
+
+ 
+and not against the 
+
+<link id="a1056" target-id="C.__-Infinity">
+
+output
+
+</link>
+
+ produced by the 
+
+<emphasis id="strong1062" effect="bold">
+
+println
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+<para id="p1093">
+<emphasis id="strong1063" effect="bold">
+And the correct answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1094">
+<emphasis id="C.__-Infinity" effect="bold">
+
+C. -Infinity
+
+</emphasis>
+
+
+</para>
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Mixed-type_arithmetic" effect="bold">
+
+Mixed-type arithmetic
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1095">
+What output is produced by the program shown in
+
+<link id="a1057" target-id="Listing_5">
+
+ Listing 
+5
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1054">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1055">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1056">
+C. 4.294967294E9
+
+</item>
+
+
+	
+
+<item id="li1057">
+D. 4294967294
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1006">
+<row id="tr1012">
+<entry id="th1006">
+
+
+
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Mixed-type arithmetic.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1005" display="block">public class Mixed01{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    //Integer.MAX_VALUE = 2147483647
+    int myIntVar = Integer.MAX_VALUE;
+    System.out.println(2.0 * myIntVar);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1096">
+This program illustrates the use of arithmetic operators with operands of different types.
+
+
+
+</para>
+
+
+
+
+<para id="p1097">
+<emphasis id="strong1064" effect="bold">
+Declare and initialize an int
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1098">
+The method named 
+
+<emphasis id="strong1065" effect="bold">
+doWork
+
+</emphasis>
+ declares a local variable of type 
+
+
+<emphasis id="strong1066" effect="bold">
+int
+
+</emphasis>
+ named 
+
+<emphasis id="strong1067" effect="bold">
+myIntVar
+
+</emphasis>
+ and initializes it with the largest positive value that can be stored in type 
+
+
+<emphasis id="strong1068" effect="bold">
+int
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1099">
+<emphasis id="strong1069" effect="bold">
+Evaluate an arithmetic expression
+
+
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1100">
+An arithmetic expression involving 
+
+<emphasis id="strong1070" effect="bold">
+myIntVar
+
+</emphasis>
+ is evaluated and the result is passed as a parameter to the 
+
+
+<emphasis id="strong1071" effect="bold">
+println
+
+</emphasis>
+ method where it is displayed on the computer screen. 
+
+</para>
+
+
+
+
+<para id="p1101">
+<emphasis id="strong1072" effect="bold">
+Multiply by a literal double value
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1102">
+The arithmetic expression uses the multiplication operator (*) to multiply the 
+integer value stored in 
+
+<emphasis id="strong1073" effect="bold">
+myIntVar
+
+</emphasis>
+ by 2.0 
+
+<emphasis id="em1026" effect="italics">
+(this literal operand is type 
+
+
+<emphasis id="strong1074" effect="bold">
+double
+
+</emphasis>
+ by default)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1103">
+<emphasis id="strong1075" effect="bold">
+Automatic conversion to wider type
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1104">
+When arithmetic is performed using operands of different types, the type of the operand of the narrower type is automatically converted to the type of the operand of the wider type, and the arithmetic is performed on the basis of the wider type. 
+
+</para>
+
+
+
+
+<para id="p1105">
+<emphasis id="em1027" effect="italics">
+(By narrower and wider, we mean the width of the range of values that can 
+be accommodated by the type in question.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1106">
+<emphasis id="strong1076" effect="bold">
+Result is of the wider type
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1107">
+The type of the result is the same as the wider type; 
+
+<emphasis id="strong1077" effect="bold">
+double
+
+</emphasis>
+ 
+in this case. 
+
+</para>
+
+
+
+
+<para id="p1108">
+<emphasis id="strong1078" effect="bold">
+In this case...
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1109">
+Because the left operand of the multiplication operation in
+
+
+<link id="a1058" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ is type 
+
+<emphasis id="strong1079" effect="bold">
+double
+
+</emphasis>
+, the 
+
+
+<emphasis id="strong1080" effect="bold">
+int
+
+</emphasis>
+ value is converted to type 
+
+<emphasis id="strong1081" effect="bold">
+double
+
+</emphasis>
+ and the arithmetic is performed as type 
+
+
+<emphasis id="strong1082" effect="bold">
+double
+
+</emphasis>
+.
+
+This produces a result of type 
+
+<emphasis id="strong1083" effect="bold">
+double
+
+</emphasis>
+, causing the floating value 4.294967294E9 to be displayed on the computer screen. 
+
+</para>
+
+
+
+
+<para id="p1110">
+<emphasis id="strong1084" effect="bold">
+And the correct answer is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1111">
+C. 4.294967294E9
+
+</para>
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Signed_modulus_operations" effect="bold">
+
+Signed modulus operations
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1112">
+What output is produced by the program in 
+
+<link id="a1059" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1058">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1059">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1060">
+C. 2
+
+</item>
+
+
+	
+
+<item id="li1061">
+D. -2
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1007">
+<row id="tr1014">
+<entry id="th1007">
+
+
+
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Signed modulus operations.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1006" display="block">public class Modulus01{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    int myVar01 = -11;
+    int myVar02 = 3;
+    System.out.println(myVar01%myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1113">
+<emphasis id="strong1085" effect="bold">
+What is a modulus operation?
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1114">
+In elementary terms, we like to say that the modulus operation returns the remainder that results from a divide operation.
+
+In general terms, that is true. 
+
+</para>
+
+
+
+
+<para id="p1115">
+<emphasis id="strong1086" effect="bold">
+Some interesting behavior
+
+
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1116">
+However, the modulus operation has some interesting behaviors that are illustrated in this and the next several questions.
+
+This program returns the modulus of -11 and 3, with -11 being the left operand. 
+
+</para>
+
+
+
+
+<para id="p1117">
+<emphasis id="strong1087" effect="bold">
+What is the algebraic sign of the result?
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1118">
+Here is a rule:
+
+    
+
+</para>
+
+
+
+
+<para id="p1119">
+<emphasis id="em1028" effect="italics">
+The result of the modulus operation takes the sign of the left operand, regardless of the sign of the quotient and regardless of the sign of the right operand.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1120">
+In this program, that produced a result of -2.
+
+Changing the sign of the right operand would not have changed the sign of the result.
+
+
+
+</para>
+
+
+
+
+<para id="p1121">
+<emphasis id="strong1088" effect="bold">
+Exercise care using the sign of the modulus result
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1122">
+Thus, you may need to exercise care as to how you interpret the sign of the result when you perform a modulus operation having a negative left operand. 
+
+</para>
+
+
+
+
+
+<para id="p1123">
+<emphasis id="strong1089" effect="bold">
+And the correct answer is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1124">
+D. -2
+
+</para>
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Modulus_with_zero_divisor" effect="bold">
+
+Modulus with zero divisor
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1125">
+What output is produced by the program shown in Listing 7?
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1062">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1063">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1064">
+C. 2
+
+</item>
+
+
+	
+
+<item id="li1065">
+D. 11
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1008">
+<row id="tr1016">
+<entry id="th1008">
+
+
+
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Modulus with zero divisor.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1008">
+<row id="tr1017">
+<entry id="td1008">
+
+
+
+<code id="pre1007" display="block">public class Modulus02{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    int myVar01 = -11;
+    int myVar02 = 0;
+    System.out.println(myVar01%myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1126">
+<emphasis id="strong1090" effect="bold">
+Integer modulus involves integer divide
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1127">
+The modulus operation with integer operands involves an integer divide.
+
+Therefore, it is subject to the same kind of problem as an ordinary integer divide when the right operand has a value of zero.
+
+</para>
+
+
+
+
+<para id="p1128">
+<emphasis id="strong1091" effect="bold">
+Program produces a runtime error
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1129">
+In this case, the program produced the runtime error shown in 
+
+<link id="a1060" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, 
+which terminated the program.
+
+</para>
+
+
+
+
+<para id="p1130">
+<emphasis id="strong1092" effect="bold">
+Dealing with the problem
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1131">
+As with integer divide, you can either test the right operand for a zero value before performing the modulus operation, or you can deal with the problem after the fact using try-catch. 
+
+</para>
+
+
+
+
+<para id="p1132">
+<emphasis id="strong1093" effect="bold">
+And the answer is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1133">
+The code in 
+
+<link id="a1061" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ produces the runtime error 
+shown in 
+
+<link id="a1062" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1009">
+<row id="tr1018">
+<entry id="th1009">
+
+	
+
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Runtime error.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1009">
+<row id="tr1019">
+<entry id="td1009">
+
+
+
+
+<code id="pre1008" display="block">Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at Worker.doWork(Modulus02.java:13)
+        at Modulus02.main(Modulus02.java:5)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+	
+	
+
+</section>
+<section id="h21010">
+<title>
+<emphasis id="Modulus_operator_with_floating_types" effect="bold">
+
+Modulus operator with 
+	floating types
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+
+<para id="p1134">
+What output is produced by the program shown in 
+
+<link id="a1063" target-id="Listing_8">
+
+Listing 
+8
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+	
+
+<item id="li1066">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1067">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1068">
+C. -0.010999999999999996
+
+</item>
+
+
+	
+
+<item id="li1069">
+D. 0.010999999999999996
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1010">
+<row id="tr1020">
+<entry id="th1010">
+
+
+
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Modulus operator with floating types.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1010">
+<row id="tr1021">
+<entry id="td1010">
+
+
+
+<code id="pre1009" display="block">public class Modulus03{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    double myVar01 = -0.11;
+    double myVar02 = 0.033;
+    System.out.println(myVar01%myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1135">
+<emphasis id="strong1094" effect="bold">
+Modulus operator can be used with floating types
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1136">
+In this case, the program returns the remainder that would be produced by dividing a double value of -0.11 by a double value of 0.033 and terminating the divide operation at the beginning of the fractional part of the quotient.
+
+</para>
+
+
+
+
+<para id="p1137">
+<emphasis id="strong1095" effect="bold">
+Say that again
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1138">
+Stated differently, the result of the modulus operation for floating types is the remainder that results after
+
+</para>
+
+
+
+
+<list id="ul1016" list-type="bulleted">
+
+	
+
+<item id="li1070">
+subtracting the right operand from the left operand an integral number of times, and
+
+</item>
+
+
+	
+
+<item id="li1071">
+terminating the repetitive subtraction process when the result of the subtraction is less than the right operand
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1139">
+<emphasis id="em1029" effect="italics">
+(Did you know that division is nothing more than repetitive subtraction 
+and multiplication is nothing more than repetitive addition?)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1140">
+<emphasis id="strong1096" effect="bold">
+Modulus result is not exact
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1141">
+According to my hand calculator, taking into account the fact that the left operand is negative, this operation  should produce a modulus result of -0.011.  As you can see 
+from the answer that follows, the result produced by the application of the modulus operation to floating types is not exact. 
+
+</para>
+
+
+
+
+<para id="p1142">
+<emphasis id="strong1097" effect="bold">
+And the answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1143">
+C. -0.010999999999999996 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="A_totally_incorrect_modulus_result" effect="bold">
+
+A totally incorrect modulus 
+result
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1144">
+What output is produced by the program shown in 
+
+<link id="a1064" target-id="Listing_9">
+
+Listing 
+9
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1017" list-type="bulleted">
+
+	
+
+<item id="li1072">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1073">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1074">
+C. 0.0
+
+</item>
+
+
+	
+
+<item id="li1075">
+D. 1.5499999999999996
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1011">
+<row id="tr1022">
+<entry id="th1011">
+
+
+
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. A totally incorrect modulus result.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1011">
+<row id="tr1023">
+<entry id="td1011">
+
+
+
+<code id="pre1010" display="block">public class Modulus04{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    double myVar01 = 15.5;
+    double myVar02 = 1.55;
+    System.out.println(myVar01%myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1145">
+<emphasis id="strong1098" effect="bold">
+A totally incorrect result
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1146">
+Unfortunately, due to floating arithmetic inaccuracy, the modulus operation in this program produces an entirely incorrect result.
+
+The result should be 0.0, and that is the result produced by my hand calculator.
+
+</para>
+
+
+
+
+<para id="p1147">
+<emphasis id="strong1099" effect="bold">
+Terminates one step too early
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1148">
+However, this program terminates the repetitive subtraction process one step too early and produces an incorrect remainder.
+
+</para>
+
+
+
+
+<para id="p1149">
+<emphasis id="strong1100" effect="bold">
+Be careful
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1150">
+This program is included here to emphasize the need to be very careful how you interpret the result of performing modulus operations on floating operands. 
+
+</para>
+
+
+
+
+<para id="p1151">
+<emphasis id="strong1101" effect="bold">
+And the answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1152">
+D. 1.5499999999999996 
+
+</para>
+
+
+
+
+<section id="h21011">
+<title>
+<emphasis id="Not_a_Number" effect="bold">
+
+Not a Number
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1153">
+What output is produced by the program shown in 
+
+<link id="a1065" target-id="Listing_10">
+
+Listing 
+10
+
+</link>
+
+?
+
+</para>
+
+
+
+
+<list id="ul1018" list-type="bulleted">
+
+	
+
+<item id="li1076">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1077">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1078">
+C. Infinity
+
+</item>
+
+
+	
+
+<item id="li1079">
+D. NaN
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1012" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1012">
+<row id="tr1024">
+<entry id="th1012">
+
+
+
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Not a number (NaN).
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1012">
+<row id="tr1025">
+<entry id="td1012">
+
+
+
+<code id="pre1011" display="block">public class Modulus05{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    double myVar01 = 15.5;
+    double myVar02 = 0.0;
+    System.out.println(myVar01%myVar02);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1154">
+<emphasis id="strong1102" effect="bold">
+Floating modulus operation involves floating divide
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1155">
+Because the modulus operation for floating operands involves a floating divide, you might expect the result to be 
+
+
+<emphasis id="em1030" effect="italics">
+Infinity
+
+</emphasis>
+ when the right operand value is 0.0. 
+
+</para>
+
+
+
+
+<para id="p1156">
+<emphasis id="strong1103" effect="bold">
+Not true!
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1157">
+The modulus operation with floating operands and 0.0 as the right operand produces 
+
+
+<emphasis id="em1031" effect="italics">
+NaN
+
+</emphasis>
+, which stands for 
+
+<emphasis id="em1032" effect="italics">
+Not a Number
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1158">
+<emphasis id="strong1104" effect="bold">
+What is the actual value of 
+
+</emphasis>
+<emphasis id="em1033" effect="italics">
+<emphasis id="strong1105" effect="bold">
+Not a Number
+
+</emphasis>
+</emphasis>
+?
+
+</para>
+
+
+
+
+<para id="p1159">
+A symbolic constant that is accessible as 
+
+<emphasis id="strong1106" effect="bold">
+Double.NaN
+
+</emphasis>
+ specifies the value that is returned in this case.
+
+Be careful what you try to do with it.  It has some peculiar behavior of its own. 
+
+</para>
+
+
+
+
+<para id="p1160">
+<emphasis id="strong1107" effect="bold">
+And the correct answer is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1161">
+D. NaN
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1162">
+I encourage you to run the programs that I have presented in this lesson to 
+confirm that you get the same results. Copy the code for each program into your 
+IDE. Then compile and run each program. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1163">
+This section contains a variety of miscellaneous materials.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1001" type="">
+
+
+
+
+
+
+
+<emphasis id="strong1108" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1019" list-type="bulleted">
+
+
+
+<item id="li1080">
+Module name: Language Features, Arithmetic Operators
+
+</item>
+
+
+
+
+<item id="li1081">
+File: Hs01006.htm
+
+
+</item>
+
+
+	
+
+<item id="li1082">
+Revised: 10/03/15
+
+</item>
+
+
+	
+
+<item id="li1083">
+Keywords:
+
+<list id="ul1020" list-type="bulleted">
+
+		
+
+<item id="li1084">
+Advanced placement
+
+</item>
+
+
+		
+
+<item id="li1085">
+AP Computer Science
+
+</item>
+
+
+		
+
+<item id="li1086">
+Java subset
+
+</item>
+
+
+		
+
+<item id="li1087">
+homeschool
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1002" type="">
+
+
+
+
+<emphasis id="strong1109" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1164">
+<emphasis id="strong1110" effect="bold">
+Financial
+
+</emphasis>
+: 
+	Although the Connexions site makes it possible for you to download a PDF 
+	file for this module at no charge, and also makes it possible for you to 
+	purchase a pre-printed version of the PDF file, you should be aware that 
+	some of the HTML elements in this module may not translate well into PDF.
+
+</para>
+
+
+	
+
+<para id="p1165">
+I also want you to know that, I receive no financial compensation from 
+	the Connexions website even if you purchase the PDF version of the module.
+
+</para>
+
+
+	
+
+<para id="p1166">
+In the past, unknown individuals have copied my modules from cnx.org, 
+	converted them to Kindle books, and placed them for sale on Amazon.com 
+	showing me as the author. I neither receive compensation for those sales nor 
+	do I know who does receive compensation. If you purchase such a book, please 
+	be aware that it is a copy of a module that is freely available on cnx.org 
+	and that it was made and published without my prior knowledge.
+
+</para>
+
+
+	
+
+<para id="p1167">
+<emphasis id="strong1111" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX, and have no 
+	affiliation with the
+	
+
+<link id="a1066" url="http://apcentral.collegeboard.com/apc/Controller.jpf">
+
+College Board
+
+</link>
+
+.
+	
+
+</para>
+
+
+	
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1168">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

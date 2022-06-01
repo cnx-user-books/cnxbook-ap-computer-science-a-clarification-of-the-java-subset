@@ -1,0 +1,44 @@
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Course">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <md:content-id>col11279</md:content-id>
+  <md:title>AP Computer Science A, Clarification of the Java Subset</md:title>
+  
+  
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <md:language>en</md:language>
+
+  
+
+  
+  <md:uuid>d9b2a462-2bd6-47e6-b13f-9bf5844bacdb</md:uuid>
+<md:slug>ap-computer-science-a-clarification-of-the-java-subset</md:slug>
+</metadata>
+
+  <col:content>
+    
+      <col:module document="m37133"/>
+        
+      
+    
+    
+      <col:module document="m37140"/>
+        
+      
+    
+    
+      <col:module document="m37130"/>
+        
+      
+    
+    
+      <col:module document="m37146"/>
+        
+      
+    
+    
+      <col:module document="m57887"/>
+        
+      
+    
+  </col:content>
+</col:collection>

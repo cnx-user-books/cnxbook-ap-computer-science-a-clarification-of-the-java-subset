@@ -1,0 +1,1992 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Hs01008: Language Features, Increment and Decrement Operators</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m57887</md:content-id>
+  <md:title>Hs01008: Language Features, Increment and Decrement Operators</md:title>
+  <md:abstract>Provide program code that illustrates some of what the student is expected to know about the increment/decrement operators. Also provides program code to illustrate some of what the student is apparently not expected to know.</md:abstract>
+  <md:uuid>882408e3-11aa-4ce3-a03a-83faa3f18dfe</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="General">
+
+General
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="Supplemental_material">
+
+Supplemental material
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="What_the_student_apparently_needs_to_know">
+
+What the 
+		student apparently does need to know
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="What_isnt_clear">
+
+What isn't clear
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="What_the_student_apparently_doesnt_need_to_know">
+
+What the student apparently doesn't need to know
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1010">
+<link id="a1010" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+</section>
+<section id="h11001">
+<title>
+ 
+
+<emphasis id="Preface" effect="bold">
+
+
+</emphasis>
+
+Preface
+
+</title>
+
+
+
+
+
+
+<section id="h21000">
+<title>
+ 
+
+<emphasis id="General" effect="bold">
+
+General
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+
+
+
+<para id="p1000">
+This tutorial lesson is part of a series of lessons dedicated to the
+
+
+<link id="a1012" url="http://apcentral.collegeboard.com/apc/public/courses/teachers_corner/4483.html">
+
+
+AP Computer Science A Exam
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1001">
+The purpose of the series is to help you to better understand the 
+
+<emphasis id="em1000" effect="italics">
+Java 
+Subset
+
+</emphasis>
+ specifications for the 
+
+<emphasis id="em1001" effect="italics">
+Advanced Placement Computer Science A
+
+</emphasis>
+ 
+exam.
+
+</para>
+
+
+
+
+
+
+
+
+
+<para id="p1002">
+For example, if you access the
+
+
+<link id="a1013" url="http://apcentral.collegeboard.com/apc/public/repository/ap-computer-science-course-description.pdf">
+
+
+AP Computer Science Course Description
+
+</link>
+
+ and scroll down to Appendix A titled 
+
+
+<emphasis id="em1002" effect="italics">
+AP Computer Science Java Subset
+
+</emphasis>
+, you will find the following
+
+
+<emphasis id="specification" effect="bold">
+
+specification
+
+</emphasis>
+
+:
+
+</para>
+
+
+	
+
+
+<note id="note1000" type="">
+
+
+
+
+
+	
+
+<para id="p1003">
+3. The increment/decrement operators ++ and -- are part of the AP Java subset.
+
+</para>
+
+
+			
+
+<para id="p1004">
+These operators are used only for their side effect, not for their value.
+
+</para>
+
+
+			
+
+<para id="p1005">
+That is,
+the postfix form (for example, x++) is always used, and the operators are not
+used inside other expressions.
+
+</para>
+
+
+			
+
+<para id="p1006">
+For example, a[x++] is not used.
+
+</para>
+
+
+			
+
+</note>
+
+
+
+
+	
+	
+
+<para id="p1007">
+<emphasis id="em1003" effect="italics">
+(Note that I entered some line breaks into the above specification 
+	for clarity. Also note that this is the wording that appeared on the website on March 3, 
+	2011. It may 
+	change over time.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1000" effect="bold">
+May be clear to some, but not to others
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+While some students and their homeschool parents may know exactly what is 
+meant by this specification, others may not. Therefore, my objective will be to elaborate 
+on and attempt to clarify the specification from a technical viewpoint to help those 
+	students and their parents get a better understanding of where they need to 
+	concentrate their efforts.
+
+</para>
+
+
+
+
+<para id="p1010">
+In this lesson, I will provide program code that illustrates some of what the 
+student is expected to know. I will also provide program code to illustrate what 
+the student is apparently not expected to know.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+ 
+
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+ I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the figures 
+and listings while you are reading about them.
+
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+ 
+
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+	
+
+<item id="li1012">
+<link id="a1014" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Behavior of increment operator.
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1015" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Behavior of decrement operator. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+ 
+
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+	
+
+<item id="li1014">
+<link id="a1016" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Simple increment/decrement.
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1017" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Adjustment clause of a for loop. 
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1018" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. More complex increment program. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+ 
+
+<emphasis id="Supplemental_material" effect="bold">
+
+Supplemental material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1012">
+ I recommend that you also study the other lessons in my extensive collection 
+of online programming tutorials. You will find a consolidated index at
+
+
+<link id="a1019" url="http://www.dickbaldwin.com/toc.htm">
+
+
+www.DickBaldwin.com
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11002">
+<title>
+ 
+
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1013">
+In this section, I will present and explain sample programs that illustrate 
+what the student does need to know and what the student 
+apparently doesn't need to know.
+
+</para>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="What_the_student_apparently_needs_to_know" effect="bold">
+
+What the student 
+apparently does need to know
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+Let's begin with a question. What output is produced by the program shown in
+
+
+<link id="a1020" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+? 
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1017">
+A. Compiler Error
+
+</item>
+
+
+	
+
+<item id="li1018">
+B. Runtime Error
+
+</item>
+
+
+	
+
+<item id="li1019">
+C. 5 5 8.3 8.3
+
+</item>
+
+
+	
+
+<item id="li1020">
+D. 6 4 9.3 7.300000000000001
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+
+
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Simple increment/decrement.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">public class Increment01{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    int w = 5, x = 5;
+    double y = 8.3, z = 8.3;
+    
+    w++;
+    x--;
+    y++;
+    z--;
+    
+    System.out.println(w + "  " +
+                       x + "  " +
+                       y + "  " +
+                       z);
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1015">
+<emphasis id="strong1001" effect="bold">
+Postfix increment and decrement operators
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1016">
+The program shown in 
+
+<link id="a1021" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ illustrates the use of the increment (++) and decrement (--) operators in their postfix form.
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="strong1002" effect="bold">
+Behavior of increment operator
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1018">
+Given a variable named 
+
+<emphasis id="strong1003" effect="bold">
+x
+
+</emphasis>
+, the two statements shown in
+
+
+<link id="a1022" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ are equivalent.
+
+
+
+</para>
+
+
+
+	
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+	
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Behavior of increment operator.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+
+<code id="pre1001" display="block">x++;
+x = x + 1;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+	
+
+
+<para id="p1019">
+<emphasis id="strong1004" effect="bold">
+Behavior of decrement operator
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1020">
+The two statements shown in 
+
+<link id="a1023" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ are equivalent. 
+
+</para>
+
+
+
+	
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1002">
+<row id="tr1004">
+<entry id="th1002">
+
+	
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Behavior of decrement operator.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+
+<code id="pre1002" display="block">x--;
+x = x - 1;</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+	
+	
+
+<para id="p1021">
+<emphasis id="strong1005" effect="bold">
+And the answer to question is...
+
+</emphasis>
+</para>
+
+
+	
+
+<para id="p1022">
+D. 6 4 9.3 7.300000000000001
+
+</para>
+
+
+
+
+<para id="p1023">
+<emphasis id="strong1006" effect="bold">
+Inaccurate results
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1024">
+Regarding the program output, you will note that there is some arithmetic 
+inaccuracy when this program is executed using JDK 1.6. Ideally, the output 
+value 7.300000000000001 should simply be 7.3 without the very small additional 
+fractional part, but that sort of thing often happens when using floating types. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="What_isnt_clear" effect="bold">
+
+What isn't clear
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1025">
+What isn't clear is whether the increment and decrement operators will be 
+used in the adjustment or update clause of a 
+
+<emphasis id="strong1007" effect="bold">
+for
+
+</emphasis>
+ loop as shown 
+in 
+
+<link id="a1024" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1003">
+<row id="tr1006">
+<entry id="th1003">
+
+
+
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Adjustment clause of a for loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">public class Increment02{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+    for(int cnt = 0;cnt &lt; 5;cnt++){
+      System.out.println(cnt);
+    }//end for loop
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1026">
+One could argue that the adjustment clause, which reads 
+
+<emphasis id="strong1008" effect="bold">
+cnt++
+
+</emphasis>
+ in
+
+
+<link id="a1025" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, is an independent expression contained in a 
+larger overall construction. If so, the use of the increment operator would not 
+be excluded by the 
+
+<link id="a1026" target-id="specification">
+
+specification
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<para id="p1027">
+In any event, the increment operator behaves as described in 
+
+<link id="a1027" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ 
+	even when used in this way. The safest thing would be for you to assume that it will be used in this 
+	way and to be prepared for it on the 
+	exam.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="What_the_student_apparently_doesnt_need_to_know" effect="bold">
+
+What the student apparently doesn't need to know
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1028">
+<emphasis id="strong1009" effect="bold">
+Prefix and postfix forms are both available
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+The increment and decrement operators have both a prefix form and a postfix 
+form.
+
+</para>
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1010" effect="bold">
+Can be fairly complex
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+It is possible to construct some fairly complex scenarios when using these operators 
+in both the prefix and postfix forms and combining them into expressions.
+
+
+
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="strong1011" effect="bold">
+Postfix only on the exam
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1033">
+However, according to the 
+
+<link id="a1028" target-id="specification">
+
+specification
+
+</link>
+
+, only the postfix form 
+is used on the AP exam. Also, according to the 
+
+<link id="a1029" target-id="specification">
+
+
+specification
+
+</link>
+
+, the increment and decrement operators are not included in other expressions on the AP exam.
+
+</para>
+
+
+
+
+<para id="p1034">
+<emphasis id="strong1012" effect="bold">
+Another program
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1035">
+Under the philosophy that it is always good to learn a little more about a 
+topic than is absolutely required before taking an exam on that topic, I will present and explain a program 
+that illustrates the use of prefix and postfix increment operators both outside 
+and included inside of another expression. 
+
+</para>
+
+
+	
+
+<para id="p1036">
+What output is produced by the program shown in 
+
+<link id="a1030" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+?
+
+</para>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1021">
+A. 5 50 500 501 5001 5001
+
+</item>
+
+
+		
+
+<item id="li1022">
+B. 6 51 501 501 5000 5001
+
+</item>
+
+
+		
+
+<item id="li1023">
+C. 6 51 500 501 5001 5001
+
+</item>
+
+
+		
+
+<item id="li1024">
+D. 6 50 500 501 5001 5001
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+
+
+<thead id="thead1004">
+<row id="tr1008">
+<entry id="th1004">
+
+
+
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. More complex increment program.
+
+
+</entry>
+</row>
+</thead>
+
+
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">public class Increment03{
+  public static void main(String args[]){
+    new Worker().doWork();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void doWork(){
+
+    int w = 5;
+    int x = 50;
+    int y = 500;
+    int z = 5000;
+    
+    ++w;//prefix increment
+    x++;//postfix increment
+    System.out.println(w + " " +
+                       x + " " +
+                       y++ + " " +
+                       y + " " +
+                       ++z + " " +
+                       z);
+
+  }//end doWork()
+}//end class definition</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<para id="p1037">
+The program in 
+
+<link id="a1031" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+ uses both the prefix and postfix forms of the increment operator. 
+
+<emphasis id="em1004" effect="italics">
+
+(This discussion also applies to the prefix and postfix forms of the decrement 
+operator.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1013" effect="bold">
+Outside of another expression
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+If the increment operator is applied to a variable outside of another 
+expression, as is the case with 
+
+<emphasis id="strong1014" effect="bold">
+++w
+
+</emphasis>
+ and 
+
+<emphasis id="strong1015" effect="bold">
+x++
+
+</emphasis>
+ in 
+
+<link id="a1032" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+, it doesn't matter whether it is of the prefix or postfix form. The 
+end result will the same in both cases. The value will have been incremented the 
+next time the variable is referenced. 
+
+<emphasis id="em1005" effect="italics">
+(This is also the case with the use of 
+the increment operator in the adjustment clause of the 
+
+<emphasis id="strong1016" effect="bold">
+for
+
+</emphasis>
+ loop 
+in 
+
+<link id="a1033" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1040">
+<emphasis id="strong1017" effect="bold">
+Inside of another expression
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1041">
+However, if the increment operator is applied to a variable inside another 
+expression, as is the case with 
+
+<emphasis id="strong1018" effect="bold">
+y++
+
+</emphasis>
+ and 
+
+<emphasis id="strong1019" effect="bold">
+++z
+
+</emphasis>
+ in 
+
+<link id="a1034" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+, the end result may depend on whether the prefix or postfix form is 
+used.
+
+</para>
+
+
+
+
+<para id="p1042">
+<emphasis id="strong1020" effect="bold">
+Rules
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+Here is a pair of rules that govern such behavior:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1025">
+If the ++ appears after the operand, as in 
+
+<emphasis id="strong1021" effect="bold">
+y++
+
+</emphasis>
+, the 
+	value of the operand is first used to evaluate the expression, and then it 
+	is immediately incremented. Therefore, 
+
+<emphasis id="strong1022" effect="bold">
+y++
+
+</emphasis>
+ is displayed as 500 in 
+
+<link id="a1035" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+. Immediately thereafter, 
+
+<emphasis id="strong1023" effect="bold">
+y
+
+</emphasis>
+ is displayed as 501 in 
+
+<link id="a1036" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+.
+
+</item>
+
+
+	
+
+<item id="li1026">
+If the ++ appears before the operand, as in 
+
+<emphasis id="strong1024" effect="bold">
+++z
+
+</emphasis>
+, the 
+	value of the operand is incremented before it is used to evaluate the 
+	expression. Therefore, 
+
+<emphasis id="strong1025" effect="bold">
+++z
+
+</emphasis>
+ is displayed as 5001 by the code 
+	in 
+
+<link id="a1037" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+. Similarly 
+
+<emphasis id="strong1026" effect="bold">
+z
+
+</emphasis>
+ is also displayed as 5001 in 
+
+<link id="a1038" target-id="Listing_3">
+
+Listing 
+	3
+
+</link>
+
+.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1044">
+<emphasis id="strong1027" effect="bold">
+And the answer to the question is...
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1045">
+C. 6 51 500 501 5001 5001
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+
+<para id="p1046">
+I encourage you to run the programs that I have presented in this lesson to 
+confirm that you get the same results. Copy the code for each program into your 
+IDE. Then compile and run each program. Experiment with 
+the code, making changes, and observing the results of your changes. Make 
+certain that you can explain why your changes behave as they do. 
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1047">
+This section contains a variety of miscellaneous materials.
+
+</para>
+
+
+
+
+
+
+
+<note id="note1001" type="">
+
+
+
+
+
+
+
+<emphasis id="strong1028" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+
+
+<item id="li1027">
+Module name: Language Features, Increment and Decrement Operators
+
+</item>
+
+
+
+
+<item id="li1028">
+File: Hs01008.htm
+
+
+</item>
+
+
+	
+
+<item id="li1029">
+Revised: 10/03/15
+
+</item>
+
+
+	
+
+<item id="li1030">
+Keywords:
+
+<list id="ul1010" list-type="bulleted">
+
+		
+
+<item id="li1031">
+Advanced placement
+
+</item>
+
+
+		
+
+<item id="li1032">
+AP Computer Science
+
+</item>
+
+
+		
+
+<item id="li1033">
+Java subset
+
+</item>
+
+
+		
+
+<item id="li1034">
+homeschool
+
+</item>
+
+
+					
+
+<item id="li1035">
+increment operator
+
+</item>
+
+
+					
+
+<item id="li1036">
+decrement operator
+
+</item>
+
+
+	
+
+</list>
+
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</note>
+
+
+
+
+
+
+
+
+
+<note id="note1002" type="">
+
+
+
+
+<emphasis id="strong1029" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1048">
+<emphasis id="strong1030" effect="bold">
+Financial
+
+</emphasis>
+: 
+	Although the Connexions site makes it possible for you to download a PDF 
+	file for this module at no charge, and also makes it possible for you to 
+	purchase a pre-printed version of the PDF file, you should be aware that 
+	some of the HTML elements in this module may not translate well into PDF.
+
+</para>
+
+
+	
+
+<para id="p1049">
+I also want you to know that, I receive no financial compensation from 
+	the Connexions website even if you purchase the PDF version of the module.
+
+</para>
+
+
+	
+
+<para id="p1050">
+In the past, unknown individuals have copied my modules from cnx.org, 
+	converted them to Kindle books, and placed them for sale on Amazon.com 
+	showing me as the author. I neither receive compensation for those sales nor 
+	do I know who does receive compensation. If you purchase such a book, please 
+	be aware that it is a copy of a module that is freely available on cnx.org 
+	and that it was made and published without my prior knowledge.
+
+</para>
+
+
+	
+
+<para id="p1051">
+<emphasis id="strong1031" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX, and have no 
+	affiliation with the
+	
+
+<link id="a1039" url="http://apcentral.collegeboard.com/apc/Controller.jpf">
+
+College Board
+
+</link>
+
+.
+	
+
+</para>
+
+
+	
+
+</note>
+
+
+
+
+
+
+
+
+
+<para id="p1052">
+-end- 
+
+</para>
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>
